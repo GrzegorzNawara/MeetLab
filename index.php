@@ -1,5 +1,5 @@
 <?php
 
-echo 'BUM';
+echo 'BUM BUM BUM';
 
 ?>
