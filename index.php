@@ -1,5 +1,5 @@
 <?php
 
-echo 'BUM BUM BUM';
+echo 'MEETLAB.PL';
 
 ?>
