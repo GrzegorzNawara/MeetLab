@@ -1,16 +1,16 @@
 import React from 'react'
 import NavBar from './NavBar'
-import AttendeeList from '../connectors/AttendeeList'
-import FeedbackModal from '../connectors/FeedbackModal'
+import WorkshopList from '../connectors/WorkshopList'
+import AdminButton from './AdminButton'
 
 const App = () => (
   <div>
 
     <NavBar />
-    <FeedbackModal />
 
     <div className="container">
-      <AttendeeList />
+      <WorkshopList />
+      <AdminButton />
     </div>
 
   </div>

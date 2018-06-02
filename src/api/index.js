@@ -1,3 +1,7 @@
+import { delay } from 'redux-saga'
+import { call } from 'redux-saga/effects'
+//import debug from '../include/debug'
+
 if (!window.fetch) { require('whatwg-fetch') }
 
 function statusHelper (response) {
@@ -8,32 +12,21 @@ function statusHelper (response) {
   }
 }
 
-export const apiFetchData = function (api_call) {
-  return fetch(api_call)
-  .then(statusHelper)
-  .then(response => response.text())
-  .catch(error => error)
-  .then(data => data)
+const apiFetch = (api_call) => {
+    return fetch(api_call)
+    .then(statusHelper)
+    .then(response => response.text())
+    .catch(error => 'FETCH_ERROR')
+    .then(data => data);
 }
 
-export const authApi = function (userData) {
-  return fetch(`http://localhost/api/auth/local/register`, {
-    method  : 'POST',
-    headers : {
-      'Accept'        : 'application/json',
-      'Content-Type'  : 'application/json'
-    },
-    body    : JSON.stringify({
-      name      : userData.name,
-      email     : userData.email,
-      password  : userData.password
-    })
-  })
-  .then(statusHelper)
-  .then(response => response.json())
-  .catch(error => error)
-  .then(data => {
-    console.log(data) // The data does log!
-    return data
-  })
-}
+export const apiFetchData = function* (api_call) {
+  let delay_time=1000;
+  while(true){
+    const response = yield call(apiFetch,api_call);
+    if(response==='FETCH_ERROR')
+      yield delay(delay_time);
+    else
+      return response;
+    delay_time*=1.2;
+}}

@@ -20,3 +20,14 @@ body {
   display: block;
   background-color: rgba(200, 200, 200, 0.9);
 }
+.logo-image {
+  height: auto;
+  width: 200px;
+}
+.admin-button img {
+  height: 60px;
+  width: auto;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
