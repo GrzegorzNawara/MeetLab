@@ -8,11 +8,8 @@ const List = ({visible=true, items, onClick}) => (
         <ListItem
           key={item.key}
           title={item.title}
-          subtitle={debug(item.subtitle,
-              'subtitle should be an array of texts',
-              typeof item.subtitle === 'object'
-            )}
-          onClick={() => onClick(item)}
+          subtitle={item.subtitle}
+          onClick={() => onClick(item.return)}
         />
     )}
   </div>

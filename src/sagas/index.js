@@ -1,9 +1,10 @@
-import { put, call, take } from 'redux-saga/effects'
+import { put, call, take, takeEvery } from 'redux-saga/effects'
 import { apiFetchData } from '../api'
-import { addWorkshop } from '../actions'
+import runCmd from './runCmd'
 
 export default function* mainSaga() {
 
+  yield takeEvery('RUN_CMD', runCmd);
   //yield put(addWorkshop({name:'BUM1'}));
   //yield call(getMyIndex);
   // load open workshops

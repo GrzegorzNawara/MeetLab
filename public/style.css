@@ -27,7 +27,7 @@ body {
 .admin-button img {
   height: 60px;
   width: auto;
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   right: 20px;
 }

@@ -1,10 +1,13 @@
-export const loadState = (defaultState) => {
+export const loadState = (version, defaultState) => {
   try {
     const serializedState = localStorage.getItem('state');
     if(serializedState === null){
       return defaultState;
     }
-    return JSON.parse(serializedState);
+    const oldState=JSON.parse(serializedState);
+    if(version!==oldState.version)
+      return defaultState;
+    return oldState;
   } catch (err) {
     return defaultState;
   }
@@ -15,6 +18,6 @@ export const saveState = (state) => {
     const serializedState = JSON.stringify(state);
     localStorage.setItem('state', serializedState);
   } catch (err) {
-    
+
   }
 };

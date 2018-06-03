@@ -7,7 +7,8 @@ const mapStateToProps = (state) => ({
   items: state.workshops.map( (item) => ({
       key: item.id,
       title: item.name,
-      subtitle: [item.name]
+      subtitle: [item.name],
+      return: item
   }))
 })
 

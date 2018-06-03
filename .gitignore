@@ -1,10 +1,12 @@
 # Elastic Beanstalk Files
 .elasticbeanstalk/
+aws-deploy.zip
 
 # whole build
 build/
 node_modules/
 package-lock.json
+deploy.sh
 
 # Logs
 logs

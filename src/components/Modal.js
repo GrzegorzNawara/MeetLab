@@ -1,7 +1,6 @@
 import React from 'react'
-import AreaList from '../connectors/AreaList'
-import SkillList from '../connectors/SkillList'
-import LevelList from '../connectors/LevelList'
+import MenuList from '../connectors/MenuList'
+import CmdList from '../connectors/CmdList'
 import debug from '../include/debug'
 
 const Modal = ({ visible=true, title, onCloseClick }) => (
@@ -18,9 +17,8 @@ const Modal = ({ visible=true, title, onCloseClick }) => (
 
           <div className="modal-body">
             <div className="container">
-              <AreaList />
-              <SkillList />
-              <LevelList />
+              <MenuList />
+              <CmdList />
             </div>
           </div>
 
