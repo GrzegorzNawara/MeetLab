@@ -1,21 +1,21 @@
 import React from 'react'
-import NavBar from './NavBar'
-import WorkshopList from '../connectors/WorkshopList'
-import MenuButton from '../connectors/MenuButton'
+import { Route, Link, HashRouter } from 'react-router-dom';
+import Workshop from './Workshop'
+import AllWorkshops from './AllWorkshops'
 import MenuModal from '../connectors/MenuModal'
 
 const App = () => (
-  <div>
+  <HashRouter>
+    <div>
 
-    <NavBar />
-    <MenuModal />
+      <MenuModal />
 
-    <div className="container">
-      <WorkshopList />
-      <MenuButton />
+      <div className="container">
+        <Route path='/:workshop_id' component={Workshop} />
+        <Route exact path='/' component={AllWorkshops} />
+      </div>
     </div>
-
-  </div>
+  </HashRouter>
 )
 
 export default App

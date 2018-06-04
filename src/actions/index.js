@@ -1,7 +1,13 @@
 //import debug from '../include/debug'
 
-export const showMenu = () => ({
-  type: 'SHOW_MENU'
+export const noAction = () => ({
+  type: 'NO_ACTION'
+})
+
+export const showMenu = ({menu_type, workshop_id}) => ({
+  type: 'SHOW_MENU',
+  menu_type: menu_type,
+  workshop_id: workshop_id
 })
 
 export const chooseMenu = (menu) => ({
@@ -23,7 +29,12 @@ export const addWorkshop = (workshop) => ({
   name: workshop.name
 })
 
-export const chooseWorkshop = (workshop) => ({
-  type: 'SET_MY_WORKSHOP',
-  my_workshop: workshop
+export const chooseWorkshop = (workshop_id) => ({
+  type: 'CHOOSE_WORKSHOP',
+  workshop_id: workshop_id
+})
+
+export const chooseBrick = (brick_id) => ({
+  type: 'CHOOSE_BRICK',
+  workshop_id: brick_id
 })
