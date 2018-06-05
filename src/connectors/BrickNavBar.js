@@ -5,7 +5,7 @@ import { chooseBrick } from '../actions'
 
 const mapStateToProps = (state,props) => ({
   title: (props.workshop_id==='')?'':
-    state.workshops.filter((workshop) => (workshop.workshop_id===props.workshop_id))[0].name
+    state.workshops.filter((workshop) => (workshop.workshop_id===props.workshop_id))[0].title
 })
 
 const mapDispatchToProps = {

@@ -12,7 +12,7 @@ import { loadState, saveState } from './include/localStorage'
 
 const sagaMiddleware = createSagaMiddleware()
 
-const version='0.39';
+const version='0.40';
 const initialState = loadState(version, {
   version: version,
   my_id: v4(),

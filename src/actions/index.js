@@ -27,7 +27,13 @@ export const resetChoice = () => ({
 
 export const addWorkshop = (workshop) => ({
   type: 'ADD_WORKSHOP',
-  name: workshop.name
+  title: workshop.title
+})
+
+export const changeWorkshopTitle = ({workshop_id, title}) => ({
+  type: 'CHANGE_WORKSHOP_TITLE',
+  workshop_id: workshop_id,
+  title: title
 })
 
 export const chooseWorkshop = (workshop_id) => ({

@@ -35,10 +35,18 @@ const reducer = (state = [], action) => {
       return {
         ...state, workshops: [...state.workshops,
         {
-          name: (action.name===undefined)?'My Hidden Workshop':action.name,
+          title: (action.title===undefined)?'My Hidden Workshop':action.title,
           workshop_id: (action.workshop_id===undefined)?v4():action.workshop_id,
           bricks: []
       }]}
+    case 'CHANGE_WORKSHOP_TITLE':
+      return {
+        ...state,
+        workshops: state.workshops.map((workshop) => (
+          (workshop.workshop_id!==action.workshop_id)?workshop:{
+            ...workshop,
+            title: action.title
+      }))}
     case 'CMD_CLR':
       return {
         ...state,

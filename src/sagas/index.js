@@ -5,7 +5,7 @@ import runCmd from './runCmd'
 export default function* mainSaga() {
 
   yield takeEvery('RUN_CMD', runCmd);
-  //yield put(addWorkshop({name:'BUM1'}));
+  //yield put(addWorkshop({title:'BUM1'}));
   //yield call(getMyIndex);
   // load open workshops
   // load my workshops
