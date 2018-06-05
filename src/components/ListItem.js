@@ -1,5 +1,5 @@
 import React from 'react'
-import debug from '../include/debug'
+//import debug from '../include/debug'
 
 const ListItem = ({ title, subtitle, onClick}) => (
   <div className="w-100 rounded bg-warning px-3 py-3 my-2 align-items-center"

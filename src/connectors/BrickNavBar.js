@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import TitleNavBar from '../components/TitleNavBar'
 import { chooseBrick } from '../actions'
-import debug from '../include/debug'
+//import debug from '../include/debug'
 
 const mapStateToProps = (state,props) => ({
   title: (props.workshop_id==='')?'':

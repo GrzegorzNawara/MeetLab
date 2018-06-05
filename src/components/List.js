@@ -1,6 +1,6 @@
 import React from 'react'
 import ListItem from './ListItem'
-import debug from '../include/debug'
+//import debug from '../include/debug'
 
 const List = ({visible=true, items, onClick}) => (
   <div className="row mx-2">

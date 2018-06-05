@@ -15,9 +15,10 @@ export const chooseMenu = (menu) => ({
   menu: menu
 })
 
-export const runCmd = (cmd) => ({
+export const runCmd = ({cmd,params}) => ({
   type: 'RUN_CMD',
-  cmd: cmd
+  cmd: cmd,
+  params: params
 })
 
 export const resetChoice = () => ({

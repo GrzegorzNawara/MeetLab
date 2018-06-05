@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import LinkList from '../components/LinkList'
 import { noAction } from '../actions'
-import debug from '../include/debug'
+//import debug from '../include/debug'
 
 const mapStateToProps = (state, props) => ({
   visible: 1,
@@ -10,8 +10,8 @@ const mapStateToProps = (state, props) => ({
     .reduce( (bricks,workshop) => { return workshop.bricks }, [] )
     .map( (item) => ({
       key: item.id,
-      title: item.name,
-      subtitle: [item.name],
+      title: item.title,
+      subtitle: [item.title],
       return: props.workshop_id+'/'+item.id
   }))
 })

@@ -1,12 +1,11 @@
 import React from 'react'
-import { Route, Link, HashRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ListItem from './ListItem'
-import debug from '../include/debug'
 
 const LinkList = ({visible=true, items, onClick}) => (
   <div className="row mx-2">
     {visible && items.map( item =>
-      <Link className="w-100" to={item.return}>
+      <Link className="w-100" to={item.return} key={'link-'+item.key}>
         <ListItem
           key={item.key}
           title={item.title}

@@ -18,7 +18,7 @@ const reducer = (state = [], action) => {
     case 'CHOOSE_MENU':
       return {
         ...state,
-        menu_choosen: action.menu.title
+        menu_choosen: action.menu
       }
     case 'RUN_CMD':
       return {
@@ -39,13 +39,22 @@ const reducer = (state = [], action) => {
           workshop_id: (action.workshop_id===undefined)?v4():action.workshop_id,
           bricks: []
       }]}
-    case 'ADD_TEST_BRICK':
+    case 'CMD_CLR':
       return {
         ...state,
         workshops: state.workshops.map((workshop) => (
           (workshop.workshop_id!==state.workshop_choosen)?workshop:{
             ...workshop,
-            bricks:[...workshop.bricks, {id:v4(), name:'Test Brick'}]
+            bricks:[]
+      }))}
+    case 'ADD_BRICK':
+      return {
+        ...state,
+        workshops: state.workshops.map((workshop) => (
+          (workshop.workshop_id!==state.workshop_choosen)?workshop:{
+            ...workshop,
+            bricks:[...workshop.bricks.filter((brick) => debug(brick.id,'BrickId')!==action.params.brick.id),
+              { ...action.params.brick }]
       }))}
     default:
       return state

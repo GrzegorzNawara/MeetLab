@@ -6,6 +6,6 @@ import debug from '../include/debug'
 export default function* runCmd(action) {
   if(debug(action,'runCmd').cmd!=='') {
     //yield fork(sendMsg,action);
-    yield put({type:action.cmd});
+    yield put({type:action.cmd, params:action.params});
   }
 }

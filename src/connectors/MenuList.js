@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import List from '../components/List'
 import { chooseMenu } from '../actions'
-import debug from '../include/debug'
+//import debug from '../include/debug'
 
 const mapStateToProps = (state) => ({
   visible: (state.show_menu && state.menu_choosen==='' && state.my_menu.length>1),

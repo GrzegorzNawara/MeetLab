@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import List from '../components/List'
 import { runCmd } from '../actions'
-import debug from '../include/debug'
+//import debug from '../include/debug'
 
 const mapStateToProps = (state) => ({
   visible: (state.show_menu && (state.menu_choosen!=='' || state.my_menu.length===1)),
@@ -10,9 +10,9 @@ const mapStateToProps = (state) => ({
     .filter((item) => (item.mtitle===state.menu_choosen || state.my_menu.length===1))
     .map( (item, id) => ({
       key: id,
-      title: item.ctitle,
+      title: item.title,
       subtitle: [item.subtitle],
-      return: item.cmd
+      return: {cmd:item.cmd, params:item}
   }))
 })
 

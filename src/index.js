@@ -8,12 +8,11 @@ import App from './components/App'
 import mainSaga from './sagas'
 import { v4 } from 'uuid'
 import { loadState, saveState } from './include/localStorage'
-import getHashParam from './include/getHashParam'
 //import debug from './include/debug'
 
 const sagaMiddleware = createSagaMiddleware()
 
-const version='0.31';
+const version='0.39';
 const initialState = loadState(version, {
   version: version,
   my_id: v4(),
@@ -25,10 +24,21 @@ const initialState = loadState(version, {
   menu_choosen: '',
   menu_type: 'global',
   menu: [
-    {menu_type:'global', mtitle:'Workshops', cmd:'ADD_WORKSHOP', ctitle:'New workshop', subtitle:'Add your new hidden workshop'},
-    {menu_type:'workshop', mtitle:'Workshop', cmd:'ADD_TEST_BRICK', ctitle:'Add test', subtitle:'Add test brick'},
-    {menu_type:'workshop', mtitle:'Workshop', cmd:'CMD_CLR', ctitle:'Clear', subtitle:'Clear this workshop'},
-    {menu_type:'workshop', mtitle:'Workshop', cmd:'CMD_DEL', ctitle:'Delete', subtitle:'Remove this workshop'}
+    {menu_type:'global', mtitle:'Workshops', cmd:'ADD_WORKSHOP', title:'New workshop', subtitle:'Add your new hidden workshop'},
+
+    //RECONQUISTA
+    {menu_type:'workshop', mtitle:'Reconquista',
+      title:'Zasady gry', subtitle:'Dodaj zasady gry',
+      cmd:'ADD_BRICK', brick: {type:'document', id:'doc/reconquista-rules-pl', title:'Reconquista: Zasady gry', subtitle:['Zasady działania symulacji']}
+    },
+    {menu_type:'workshop', mtitle:'Reconquista',
+      title:'Uruchom grę', subtitle:'Dodaj i wystartuj kolejną grę',
+      cmd:'ADD_BRICK', brick: {type:'document', id:'game/reconquista', title:'Reconquista: Level 1', subtitle:['Uruchomiona gra']}
+    },
+    {menu_type:'workshop', mtitle:'Reconquista', cmd:'CMD_CLR', title:'Clear', subtitle:'Clear this workshop'},
+    //RECONQUISTA
+
+    {menu_type:'workshop', mtitle:'Admin', cmd:'CMD_DEL', title:'Delete', subtitle:'Remove this workshop'}
   ],
   my_menu: []
 });
