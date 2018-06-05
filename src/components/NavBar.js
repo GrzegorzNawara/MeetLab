@@ -1,11 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const NavBar = ({visible}) => { return (visible)?(
+const NavBar = () => (
   <div className=''>
-    <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-      <a className="navbar-brand my-0 mr-md-auto" href="#test" title="logo"><img className="logo-image" alt="logo" src="images/logo.png"></img></a>
+    <div className="d-flex align-items-center p-3 mb-2 bg-white border-bottom box-shadow">
+      <Link className="navbar-brand my-0" to='/' title="logo">
+        <img className="logo-image" alt="logo" src="images/logo.png"></img></Link>
     </div>
   </div>
-):null}
+)
 
 export default NavBar

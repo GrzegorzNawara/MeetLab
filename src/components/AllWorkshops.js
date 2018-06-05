@@ -4,11 +4,13 @@ import WorkshopNavBar from '../connectors/WorkshopNavBar'
 import MenuButton from '../connectors/MenuButton'
 
 const AllWorkshops = () => (
+  <div>
+    <WorkshopNavBar />
     <div className="container">
-      <WorkshopNavBar />
       <WorkshopList />
       <MenuButton workshop_id='' menu_type='global' />
     </div>
+  </div>
 )
 
 export default AllWorkshops

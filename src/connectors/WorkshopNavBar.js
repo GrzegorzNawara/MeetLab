@@ -3,7 +3,6 @@ import NavBar from '../components/NavBar'
 import { chooseBrick } from '../actions'
 
 const mapStateToProps = (state) => ({
-  visible: 1
 })
 
 const mapDispatchToProps = {

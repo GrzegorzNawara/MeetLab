@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import List from '../components/List'
-import { chooseBrick } from '../actions'
+import LinkList from '../components/LinkList'
+import { noAction } from '../actions'
 import debug from '../include/debug'
 
 const mapStateToProps = (state, props) => ({
@@ -12,17 +12,17 @@ const mapStateToProps = (state, props) => ({
       key: item.id,
       title: item.name,
       subtitle: [item.name],
-      return: item
+      return: props.workshop_id+'/'+item.id
   }))
 })
 
 const mapDispatchToProps = {
-  onClick: chooseBrick
+  onClick: noAction
 }
 
 const BrickList = connect(
   mapStateToProps,
   mapDispatchToProps
-)(List)
+)(LinkList)
 
 export default BrickList

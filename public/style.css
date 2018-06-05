@@ -23,10 +23,8 @@ a { color: #333333; }
   display: block;
   background-color: rgba(200, 200, 200, 0.9);
 }
-.logo-image, .micro-logo-image {
-  height: 50px;
-  width: auto;
-}
+.logo-image { height: 40px; width: auto; }
+.micro-logo-image { height: 24px; width: auto; }
 .admin-button img {
   height: 60px;
   width: auto;

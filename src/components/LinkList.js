@@ -6,7 +6,7 @@ import debug from '../include/debug'
 const LinkList = ({visible=true, items, onClick}) => (
   <div className="row mx-2">
     {visible && items.map( item =>
-      <Link to={item.return}>
+      <Link className="w-100" to={item.return}>
         <ListItem
           key={item.key}
           title={item.title}
