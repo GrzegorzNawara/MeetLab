@@ -4,7 +4,8 @@ import { resetChoice } from '../actions'
 
 const mapStateToProps = (state) => ({
   visible: state.show_menu,
-  title: (state.menu_choosen!=='')?state.menu_choosen:'Menu'
+  title: (state.menu_choosen!=='')?state.menu_choosen:'Menu',
+  workshop_id: state.workshop_choosen
 })
 
 const mapDispatchToProps = {

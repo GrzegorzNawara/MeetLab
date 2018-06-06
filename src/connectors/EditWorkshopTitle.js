@@ -1,13 +1,13 @@
 import { connect } from 'react-redux'
 import EditItem from '../components/EditItem'
 import { changeWorkshopTitle } from '../actions'
-//import debug from '../include/debug'
+import debug from '../include/debug'
 
 const mapStateToProps = (state, props) => ({
+  visible: (props.workshop_id!=='' && state.my_menu.length===0), 
   workshop_id: props.workshop_id,
-  title: state.workshops.filter((workshop) => workshop.workshop_id===props.workshop_id)[0].title,
+  title: (props.workshop_id==='')?'':state.workshops.filter((workshop) => workshop.workshop_id===props.workshop_id)[0].title,
   subtitle: []
-
 })
 
 const mapDispatchToProps = {

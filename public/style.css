@@ -24,7 +24,8 @@ a { color: #333333; }
   background-color: rgba(200, 200, 200, 0.9);
 }
 .logo-image { height: 40px; width: auto; }
-.micro-logo-image { height: 24px; width: auto; }
+.micro-logo-image { height: 30px; width: auto; }
+.edit-image { height: 24px; width: auto; vertical-align: baseline;}
 .admin-button img {
   height: 60px;
   width: auto;

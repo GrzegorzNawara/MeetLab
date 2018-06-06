@@ -3,6 +3,14 @@ import { v4 } from 'uuid'
 
 const reducer = (state = [], action) => {
   switch (debug(action,'ACTION').type) {
+    case 'SHOW_EDIT':
+      return {
+        ...state,
+        workshop_choosen: action.workshop_id,
+        menu_choosen: 'Change Title',
+        my_menu: [],
+        show_menu: 1
+      }
     case 'SHOW_MENU':
       return {
         ...state,
@@ -42,6 +50,8 @@ const reducer = (state = [], action) => {
     case 'CHANGE_WORKSHOP_TITLE':
       return {
         ...state,
+        show_menu: 0,
+        menu_choosen: '',
         workshops: state.workshops.map((workshop) => (
           (workshop.workshop_id!==action.workshop_id)?workshop:{
             ...workshop,

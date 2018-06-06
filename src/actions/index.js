@@ -4,6 +4,11 @@ export const noAction = () => ({
   type: 'NO_ACTION'
 })
 
+export const showEdit = ({workshop_id}) => ({
+  type: 'SHOW_EDIT',
+  workshop_id: workshop_id
+})
+
 export const showMenu = ({menu_type, workshop_id}) => ({
   type: 'SHOW_MENU',
   menu_type: menu_type,

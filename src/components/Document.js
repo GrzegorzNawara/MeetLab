@@ -1,6 +1,6 @@
 import React from 'react'
 import marked from 'marked';
-import NavBar from './NavBar'
+import TitleNavBar from './TitleNavBar'
 import debug from '../include/debug'
 
 class Document extends React.Component {
@@ -35,7 +35,7 @@ class Document extends React.Component {
 
   render = () => (
     <div>
-      <NavBar />
+      <TitleNavBar title='Document' />
       <div className='container'>
         <div dangerouslySetInnerHTML={{__html: this.state.content}} />
       </div>
