@@ -12,7 +12,7 @@ import { loadState, saveState } from './include/localStorage'
 
 const sagaMiddleware = createSagaMiddleware()
 
-const version='0.40';
+const version='0.42';
 const initialState = loadState(version, {
   version: version,
   my_id: v4(),
@@ -26,7 +26,22 @@ const initialState = loadState(version, {
   menu: [
     {menu_type:'global', mtitle:'Workshops', cmd:'ADD_WORKSHOP', title:'New workshop', subtitle:'Add your new hidden workshop'},
 
+    //RAVEN 13
+    {menu_type:'workshop', mtitle:'Raven 13',
+      title:'Zasady gry', subtitle:'Wrzuć dokument do warsztatu',
+      cmd:'ADD_BRICK', brick: {type:'document', id:'doc/rules-raven13-pl', title:'Raven 13: Zasady gry', subtitle:['Dokument']}
+    },
+    //RAVEN 13
+
     //RECONQUISTA
+    { mtitle:'Reconquista', cmd:'ADD_BRICK', menu_type:'workshop',
+      title:'Dobra postawa', subtitle:'Wrzuć dokument do warsztatu',
+      brick: {
+        id:'doc/dobra-postawa',
+        title:'Dobra Postawa',
+        subtitle:['Dokument']},
+        type:'document'
+    },
     {menu_type:'workshop', mtitle:'Reconquista',
       title:'Zasady gry', subtitle:'Dodaj zasady gry',
       cmd:'ADD_BRICK', brick: {type:'document', id:'doc/reconquista-rules-pl', title:'Reconquista: Zasady gry', subtitle:['Zasady działania symulacji']}
