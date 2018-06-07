@@ -12,7 +12,7 @@ import { loadState, saveState } from './include/localStorage'
 
 const sagaMiddleware = createSagaMiddleware()
 
-const version='0.42';
+const version='0.48';
 const initialState = loadState(version, {
   version: version,
   my_id: v4(),
@@ -37,18 +37,25 @@ const initialState = loadState(version, {
     { mtitle:'Reconquista', cmd:'ADD_BRICK', menu_type:'workshop',
       title:'Dobra postawa', subtitle:'Wrzuć dokument do warsztatu',
       brick: {
+        type:'document',
         id:'doc/dobra-postawa',
         title:'Dobra Postawa',
         subtitle:['Dokument']},
-        type:'document'
+      type:'document'
+    },
+    { mtitle:'Reconquista', cmd:'ADD_BRICK', menu_type:'workshop',
+      title:'Start gry', subtitle:'Wystartuj grę',
+      brick: {
+        type:'game',
+        id:'game/reconquista-RANDID',
+        link: 'http://35.158.92.99?game_id=GAMEID&user_id=USERID',
+        title:'Reconquista - symulacja',
+        subtitle:['Wejdź do gry']},
+      type:'game'
     },
     {menu_type:'workshop', mtitle:'Reconquista',
       title:'Zasady gry', subtitle:'Dodaj zasady gry',
       cmd:'ADD_BRICK', brick: {type:'document', id:'doc/reconquista-rules-pl', title:'Reconquista: Zasady gry', subtitle:['Zasady działania symulacji']}
-    },
-    {menu_type:'workshop', mtitle:'Reconquista',
-      title:'Uruchom grę', subtitle:'Dodaj i wystartuj kolejną grę',
-      cmd:'ADD_BRICK', brick: {type:'document', id:'game/reconquista', title:'Reconquista: Level 1', subtitle:['Uruchomiona gra']}
     },
     {menu_type:'workshop', mtitle:'Reconquista', cmd:'CMD_CLR', title:'Clear', subtitle:'Clear this workshop'},
     //RECONQUISTA

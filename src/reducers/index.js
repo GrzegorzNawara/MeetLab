@@ -71,8 +71,10 @@ const reducer = (state = [], action) => {
         workshops: state.workshops.map((workshop) => (
           (workshop.workshop_id!==state.workshop_choosen)?workshop:{
             ...workshop,
-            bricks:[...workshop.bricks.filter((brick) => debug(brick.id,'BrickId')!==action.params.brick.id),
-              { ...action.params.brick }]
+            bricks:[...workshop.bricks.filter((brick) => (brick.id!==action.params.brick.id.replace('RANDID',v4()))),
+              { ...action.params.brick,
+                id: action.params.brick.id.replace('RANDID',v4())
+              }]
       }))}
     default:
       return state
