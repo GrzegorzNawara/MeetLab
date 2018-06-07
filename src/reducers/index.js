@@ -73,7 +73,8 @@ const reducer = (state = [], action) => {
             ...workshop,
             bricks:[...workshop.bricks.filter((brick) => (brick.id!==action.params.brick.id.replace('RANDID',v4()))),
               { ...action.params.brick,
-                id: action.params.brick.id.replace('RANDID',v4())
+                id: action.params.brick.id.replace('RANDID',v4()),
+                link: (action.params.brick.link===undefined)?'':action.params.brick.link.replace('GAMEID',v4()).replace('USERID',state.my_id),
               }]
       }))}
     default:

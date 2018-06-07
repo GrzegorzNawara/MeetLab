@@ -13,7 +13,7 @@ const mapStateToProps = (state, props) => ({
       title: item.title,
       subtitle: [item.title],
       type: item.type,
-      link: (item.link===undefined)?'':item.link.replace('GAMEID',v4()).replace('USERID',state.my_id),
+      link: item.link,
       return: props.workshop_id+'/'+item.id
   }))
 })
