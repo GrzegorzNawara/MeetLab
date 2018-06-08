@@ -11,7 +11,7 @@ const Modal = ({ visible=true, title, onCloseClick, workshop_id }) => (
         <div className="modal-content">
           <div className="modal-header" onClick={onCloseClick}>
             <h4 className="modal-title">{title}</h4>
-            <button type="button" className="close" onClick={onCloseClick}>&times;</button>
+            <button type="button" className="color-gray close" onClick={onCloseClick}>&times;</button>
           </div>
 
           <div className="modal-body">

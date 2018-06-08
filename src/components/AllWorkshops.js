@@ -1,14 +1,14 @@
 import React from 'react'
 import WorkshopList from '../connectors/WorkshopList'
-import WorkshopNavBar from '../connectors/WorkshopNavBar'
+import AllWorkshopsNavBar from '../connectors/AllWorkshopsNavBar'
 import MenuButton from '../connectors/MenuButton'
 
-const AllWorkshops = () => (
+const AllWorkshops = ({match}) => (
   <div>
-    <WorkshopNavBar />
+    <AllWorkshopsNavBar />
     <div className="container">
       <WorkshopList />
-      <MenuButton workshop_id='' menu_type='global' />
+      <MenuButton workshop_id='' menu_type='global' my_id={match.params.my_id} my_name={match.params.my_name} />
     </div>
   </div>
 )

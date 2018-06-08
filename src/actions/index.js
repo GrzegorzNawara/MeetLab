@@ -4,6 +4,12 @@ export const noAction = () => ({
   type: 'NO_ACTION'
 })
 
+export const setMyIdAndName = ({my_id, my_name}) => ({
+  type: 'SET_MY_ID_AND_NAME',
+  my_id: my_id,
+  my_name: my_name
+})
+
 export const showEdit = ({workshop_id}) => ({
   type: 'SHOW_EDIT',
   workshop_id: workshop_id
@@ -35,10 +41,11 @@ export const addWorkshop = (workshop) => ({
   title: workshop.title
 })
 
-export const changeWorkshopTitle = ({workshop_id, title}) => ({
+export const changeWorkshopTitle = ({workshop_id, title, subtitle}) => ({
   type: 'CHANGE_WORKSHOP_TITLE',
   workshop_id: workshop_id,
-  title: title
+  title: title,
+  subtitle: subtitle
 })
 
 export const chooseWorkshop = (workshop_id) => ({

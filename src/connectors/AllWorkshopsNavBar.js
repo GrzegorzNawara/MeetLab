@@ -9,9 +9,9 @@ const mapDispatchToProps = {
   onClick: chooseBrick
 }
 
-const WorkshopNavBar = connect(
+const AllWorkshopsNavBar = connect(
   mapStateToProps,
   mapDispatchToProps
 )(NavBar)
 
-export default WorkshopNavBar
+export default AllWorkshopsNavBar

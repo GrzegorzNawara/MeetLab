@@ -6,8 +6,10 @@ import { showEdit } from '../actions'
 const mapStateToProps = (state,props) => ({
   edit_visible: 1,
   workshop_id: props.workshop_id,
-  title: (props.workshop_id==='')?'':
-    state.workshops.filter((workshop) => (workshop.workshop_id===props.workshop_id))[0].title
+  title: state.workshops.filter((workshop) => (workshop.workshop_id===props.workshop_id))[0].title,
+  subtitle: state.workshops.filter((workshop) => (workshop.workshop_id===props.workshop_id))[0].subtitle,
+  pin: state.workshops.filter((workshop) => (workshop.workshop_id===props.workshop_id))[0].pin,
+  mgname: state.workshops.filter((workshop) => (workshop.workshop_id===props.workshop_id))[0].mgname
 })
 
 const mapDispatchToProps = {

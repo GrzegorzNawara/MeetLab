@@ -9,8 +9,8 @@ const ListItem = ({ title, subtitle, onClick}) => (
       }}>
     <h4>{title}</h4>
     <div className=''>{
-      subtitle.map( (subtitle_item) =>
-         <div key={title+subtitle_item}>
+      subtitle.map( (subtitle_item,index) =>
+         <div key={index}>
            {subtitle_item}
          </div>
       )

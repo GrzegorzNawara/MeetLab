@@ -7,7 +7,7 @@ const mapStateToProps = (state) => ({
   items: state.workshops.map( (item) => ({
       key: item.workshop_id,
       title: item.title,
-      subtitle: [item.workshop_id],
+      subtitle: [item.subtitle, item.mgname],
       return: item.workshop_id
   }))
 })

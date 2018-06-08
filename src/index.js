@@ -12,10 +12,11 @@ import { loadState, saveState } from './include/localStorage'
 
 const sagaMiddleware = createSagaMiddleware()
 
-const version='0.48';
+const version='0.49';
 const initialState = loadState(version, {
   version: version,
   my_id: v4(),
+  my_name: '',
 
   workshop_choosen: '',
   workshops: [],
@@ -76,7 +77,7 @@ sagaMiddleware.run(mainSaga)
 
 render(
   <Provider store={store}>
-    <App />
+    <App store={store} />
   </Provider>,
   document.getElementById('root')
 );

@@ -7,7 +7,7 @@ const reducer = (state = [], action) => {
       return {
         ...state,
         workshop_choosen: action.workshop_id,
-        menu_choosen: 'Change Title',
+        menu_choosen: 'Change the Title',
         my_menu: [],
         show_menu: 1
       }
@@ -39,12 +39,21 @@ const reducer = (state = [], action) => {
         show_menu: 0,
         menu_choosen: ''
       }
+    case 'SET_MY_ID_AND_NAME':
+      return {
+        ...state,
+        my_id: action.my_id,
+        my_name: action.my_name
+      }
     case 'ADD_WORKSHOP':
       return {
         ...state, workshops: [...state.workshops,
         {
-          title: (action.title===undefined)?'My Hidden Workshop':action.title,
+          title: (action.title===undefined)?'My Workshop':action.title,
+          subtitle: (action.subtitle===undefined)?'Hidden':action.subtitle,
           workshop_id: (action.workshop_id===undefined)?v4():action.workshop_id,
+          pin: ''+Math.floor(9899*Math.random()+1000),
+          mgname: state.my_name,
           bricks: []
       }]}
     case 'CHANGE_WORKSHOP_TITLE':
@@ -55,7 +64,8 @@ const reducer = (state = [], action) => {
         workshops: state.workshops.map((workshop) => (
           (workshop.workshop_id!==action.workshop_id)?workshop:{
             ...workshop,
-            title: action.title
+            title: action.title,
+            subtitle: action.subtitle
       }))}
     case 'CMD_CLR':
       return {
